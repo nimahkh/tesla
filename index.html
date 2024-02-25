@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Vite + TS</title>
+    <link rel="stylesheet" crossorigin href="./src/assets/style.scss">
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <noscript>
+      <header class="flex flex-col justify-center items-center tesla-header">
+          <div class="p-0 m-0 bg-black flex items-center w-full justify-center logo">
+              <img src="${teslaLogo}" alt="Tesla Logo" class="p-2">
+          </div>
+      </header>
+      <div id="wrapper">
+          <div class="font-regular text-black bg-white">
+              
+              <nav class="flex justify-center">
+                  <div class="tesla-banner">
+                      <img src="${teslaBanner}" /> 
+                      <ul class="flex absolute justify-center top-0 w-full">
+                          <li class="mx-2 text-sm"><a class="link" href="#model-s">MODEL S</a></li>
+                          <li class="mx-2 text-sm"><a class="link" href="#model-x" >MODEL X</a></li>
+                          <li class="mx-2 text-sm"><a class="link" href="#model-3" >MODEL 3</a></li>
+                          <li class="mx-2 text-sm"><a class="link" href="#roadster" >ROADSTER</a></li>
+                          <li class="mx-2 text-sm"><a class="link" href="#energy" >ENERGY</a></li>
+                      </ul>
+                  </div>
+              </nav>
+
+              <main class="px-4 px-16">
+                  <div id="reactivity-demo">
+                    <section class="text-center my-8">
+                        <h1 class="text-3xl my-8">Far far away, behind the word mountains...</h1>
+                        <p class="text-base my-4">A small river named Duden flows by their place and supplies it...</p>
+                    </section>
+
+            <section class="my-12">
+                <h2 class="text-xl text-center">Range per Charge</h2>
+            <!-- 
+                <div class="card">
+                <button id="counter" type="button"></button>
+                <button id="countb" type="button"></button>
+                </div> -->
+
+    <div class="input-group">
+        <div class="flex flex-row justify-between w-full">
+            <div class="flex flex-col">
+                <div for="speed" class="input-label montserrat-medium">Speed</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container">
+                        <div class="flex flex-row justify-between items-center">
+                            <input id="speed" class="range" min="70" max="140" step="10" name="speed" value="70" type="number">
+                            <span class="montserrat-medium indicator">KMH</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="document.querySelector('#speed').stepUp()" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="document.querySelector('#speed').stepDown()" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-divider"></div>
+            <div class="flex flex-col">
+                <div for="speed" class="input-label montserrat-medium">Outside temperature</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container">
+                        <div class="relative w-full text-center">
+                            <input id="temperature" class="range" min="-10" max="40" step="10" name="temperature" value="-10" type="number">
+                            <span class="montserrat-medium absolute right-12 indicator">º</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="document.querySelector('#temperature').stepUp()" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="document.querySelector('#temperature').stepDown()" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative speed-heater-wrapper flex items-center w-full">
+            <div class="absolute speed-heater flex flex-col">
+                <div class="speed-heater-inner">
+                    <p class="speed-heater-text montserrat-medium">AC OFF</p>
+                    <div id="heater"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="flex flex-row w-full">
+            <div class="flex flex-col mr-8">
+                <div for="speed" class="input-label montserrat-medium">Speed</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container">
+                        <div class="flex flex-row justify-between items-center">
+                            <input id="speed" class="range" min="70" max="140" step="10" name="speed" value="70" type="number">
+                            <span class="montserrat-medium indicator">KMH</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="document.querySelector('#speed').stepUp()" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="document.querySelector('#speed').stepDown()" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div for="speed" class="input-label montserrat-medium">Speed</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container">
+                        <div class="flex flex-row justify-between items-center">
+                            <input id="speed" class="range" min="70" max="140" step="10" name="speed" value="70" type="number">
+                            <span class="montserrat-medium indicator">KMH</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="document.querySelector('#speed').stepUp()" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="document.querySelector('#speed').stepDown()" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- More content here -->
+
+                  </div>
+              </main>
+
+              <footer class="text-sm p-4">
+                  <div class="flex flex-wrap justify-between">
+                      <!-- Footer content -->
+                  </div>
+              </footer>
+          </div>
+      </div>
+
+    </noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

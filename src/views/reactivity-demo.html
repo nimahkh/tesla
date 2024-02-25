@@ -1,0 +1,125 @@
+<section class="text-center my-8 flex flex-col items-center justify-center w-full">
+    <div class="w-full flex justify-center items-center relative">
+        <div class="w-auto sm:w-1/2 flex flex-col justify-center items-center">
+            <h1 class="my-8 montserrat-semibold heading-5 sm:heading-3 text-primary">Far far away, behind the word mountains…</h1>
+            <p class="text-base my-4 mx-4 sm:mx-0 text-primary heading-6">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <div class="arrow-down mt-8"></div>
+            <h2 class="sm:heading-4 heading-5 text-center mt-12">Range per Charge</h2>
+        </div>
+    </div>
+    <div class="tesla-car">
+        <div id="wheel_left" class="wheel-left-nineteen fast"></div>
+        <div id="wheel_right" class="wheel-right-nineteen fast"></div>
+    </div>
+</section>
+
+<section>
+    <div class="flex flex-row justify-center items-center w-full">
+        <div class="w-50p sm:w-30p flex flex-row justify-center sm:justify-between gap-10 sm:gap-0">
+            <div class="flex flex-col w-30 xl:w-full">
+                <div id="_100d"></div>
+                <div class="flex flex-row justify-center mt-4">
+                    <p class="text-3xl text-secondary"><span id="_100d_km"></span></p>
+                    <p class="text-xl ml-2 text-secondary">KM</p>
+                </div>
+            </div>
+            <div class="flex flex-col w-35 xl:w-full">
+                <div id="_p100d"></div>
+                <div class="flex flex-row justify-center mt-4">
+                    <p class="text-3xl text-secondary"><span id="_p100d_km"></span></p>
+                    <p class="text-xl ml-2 text-secondary">KM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-12 w-full flex justify-center flex-col items-center" data-test-id="controllers">
+    <div class="input-group w-80p flex-col xl:flex-row">
+        <div class="flex flex-col sm:flex-row justify-between w-full ">
+            <div class="flex flex-col sm:mr-8">
+                <div class="input-label montserrat-medium">Speed</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container justify-between">
+                        <div class="flex flex-row justify-between items-center">
+                            <input id="speed" class="range" min="70" max="140" step="10" name="speed" value="70" type="number">
+                            <span class="montserrat-medium indicator">KMH</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="handleSpeed('up')" id="speed-up" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="handleSpeed('down')" disabled id="speed-down" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-divider hidden xl2:block"></div>
+            <div class="flex flex-col">
+                <div class="input-label montserrat-medium">Outside temperature</div>
+                <div class="relative w-full">
+                    <div class="relative flex flex-row range-container justify-between">
+                        <div class="relative w-full text-center">
+                            <input id="temperature" class="range" min="-10" max="40" step="10" name="temperature" value="-10" type="number">
+                            <span class="montserrat-medium absolute right-12 indicator">º</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <button onclick="handleTemperature('up')" id="temperature-up" class="chevron-up stepper"></button>
+                            <div class="divider"></div>
+                            <button onclick="handleTemperature('down')" disabled id="temperature-down" class="chevron-down stepper"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative speed-heater-wrapper flex items-center w-full justify-center mx-9 mt-5 xl:mt-0">
+            <div class="absolute speed-heater flex flex-col" onclick="handleAcHeater()">
+                <div class="speed-heater-inner">
+                    <p class="speed-heater-text montserrat-medium mt-5">
+                        <span id="ac-off" class="hidden">AC OFF</span>
+                        <span id="ac-on" class="hidden">AC ON</span>
+                        <span id="heat-off" class="">Heat OFF </span>
+                        <span id="heat-on" class="hidden">Heat ON</span>
+                    </p>
+                    <div id="heater"></div>
+                    <div id="ac" class="hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vertical-divider hidden xl2:block"></div>
+        <div class="flex flex-row w-full wheels justify-center">
+            <div class="flex flex-col w-auto sm:w-none">
+                <div class="input-label montserrat-medium">Wheels</div>
+                <div class="flex flex-row justify-between items-center">
+
+                    <div id="nineteen" class="relative w-full pointer active wheel_item" onclick="handleToggleWheels('nineteen')">
+                        <div class="relative flex flex-row range-container justify-center">
+                            <div class="flex flex-row justify-center items-center mr-4">
+                                <span class="montserrat-medium indicator wheel nineteen"></span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="montserrat-medium indicator">19”</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="twentyone" class="relative w-full ml-8 pointer wheel_item" onclick="handleToggleWheels('twentyone')">
+                        <div class="relative flex flex-row range-container justify-center">
+                            <div class="flex flex-row justify-center items-center mr-4">
+                                <span class="montserrat-medium indicator wheel twentyone"></span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="montserrat-medium indicator">21”</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>    
+            </div>
+        </div>
+    </div>
+    <div class="w-80p">
+        <p class="text-base">The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving style and operating, environmental and climate conditions. See how some of these particular use conditions may affect your range in our simulation model.</p>
+    </div>
+</section>

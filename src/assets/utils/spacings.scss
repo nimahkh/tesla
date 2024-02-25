@@ -1,0 +1,28 @@
+$sizes: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 1.875rem, 2rem, 2.25rem, 2.5rem, 2.75rem, 3rem;
+
+@each $size in $sizes {
+  $index: index($sizes, $size); // Get the index of the current size
+
+  // Padding
+  .p-#{$index - 1} { padding: $size; }
+  .px-#{$index - 1} { padding-left: $size; padding-right: $size; }
+  .py-#{$index - 1} { padding-top: $size; padding-bottom: $size; }
+  .pt-#{$index - 1} { padding-top: $size; }
+  .pr-#{$index - 1} { padding-right: $size; }
+  .pb-#{$index - 1} { padding-bottom: $size; }
+  .pl-#{$index - 1} { padding-left: $size; }
+
+  // Margin
+  .m-#{$index - 1} { margin: $size; }
+  .mx-#{$index - 1} { margin-left: $size; margin-right: $size; }
+  .my-#{$index - 1} { margin-top: $size; margin-bottom: $size; }
+  .mt-#{$index - 1} { margin-top: $size; }
+  .mr-#{$index - 1} { margin-right: $size; }
+  .mb-#{$index - 1} { margin-bottom: $size; }
+  .ml-#{$index - 1} { margin-left: $size; }
+  // Margin
+  .top-#{$index - 1} { top: $size; }
+  .bottom-#{$index - 1} { bottom: $size; }
+  .right-#{$index - 1} { right: $size; }
+  .left-#{$index - 1} { left: $size; }
+}

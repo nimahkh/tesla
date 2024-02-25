@@ -1,0 +1,35 @@
+.heading-3 {
+    font-size: 64px;
+    font-style: normal;
+}
+.heading-4 {
+    font-size: 38px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.heading-5 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.heading-6 {
+    font-family: "Arial";
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+    font-style: normal;
+    text-align: center;
+}
+
+@each $breakpoint, $bp-value in $breakpoints {
+  @media (min-width: $bp-value) {
+    .#{$breakpoint}\:heading-3 { font-size: 64px } 
+    .#{$breakpoint}\:heading-4 { font-size: 38px; }
+    .#{$breakpoint}\:heading-5 { font-size: 24px; }
+    .#{$breakpoint}\:heading-6 {
+      font-size: 16px;
+    }
+  }
+}

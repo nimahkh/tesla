@@ -1,0 +1,5 @@
+$colors: ('black': #000000, 'white': #ffffff, 'primary': #040c36, 'secondary': #008dff, 'red': #cc0000);
+
+@each $color-name, $color-value in $colors {
+  .text-#{$color-name} { color: $color-value; }
+}

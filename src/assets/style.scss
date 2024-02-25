@@ -1,0 +1,357 @@
+@import './fonts.scss';
+@import './typo.scss';
+@import './utils/index.scss';
+@import './animation.scss';
+@import './input.scss';
+
+// Define variables for colors and fonts if you plan to reuse them
+$font-family-base: 'Montserrat', sans-serif;
+$color-base: rgba(0, 0, 0, 0.87);
+$background-color-base: #ffffff;
+$link-color: #646cff;
+$link-hover-color: #535bf2;
+$link-hover-color-light: #747bff;
+$button-background-color: #1a1a1a;
+$button-background-color-light: #f9f9f9;
+$button-hover-border-color: #646cff;
+$text-color-light: #213547;
+$background-color-light: #ffffff;
+
+:root {
+  font-family: $font-family-base;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: $color-base;
+  background-color: $background-color-base;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-color-scheme: light) {
+    color: $text-color-light;
+    background-color: $background-color-light;
+  }
+}
+
+.pointer { cursor: pointer; }
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  margin: unset;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+#wrapper {
+  position: absolute;
+  top: 65px;
+  width: 100vw;
+  min-width: fit-content
+}
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $button-background-color;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: $button-hover-border-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: $button-background-color-light;
+  }
+}
+/**
+ * Tesla Header
+ */
+.tesla-header {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    & .logo {
+      width: 100%;
+      height: 65px;
+    }
+}
+
+.tesla-banner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  & img {
+    width: 100%;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    & li {
+      margin-top: 34px;
+    }
+    & .link {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.vertical-divider {
+    margin-right: 37px;
+    width: 1px;
+    height: 110px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.speed-heater-wrapper {
+   height: 123px;
+   text-align: center;
+}
+
+.speed-heater {
+  width: 103px;
+  height: 103px;
+  border-color: #e3e8f0;
+  padding:10px;
+  border-width: 1px;
+  border-style: solid;
+  background: #f0f2f7;
+  border-radius: 50%;
+}
+
+.speed-heater-inner {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 103px;
+  height: 103px;
+  cursor: pointer;
+}
+.ac-on {
+  background-color: map-get($colors, 'secondary');
+  #ac-on{
+    color: #fff
+  }
+}
+.heat-on {
+  background-color: map-get($colors, 'red');
+  #heat-on{
+    color: #fff
+  }
+}
+
+.speed-heater-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: #213547;
+}
+
+#_100d {
+  background: url('./images/100d@2x.png') no-repeat center;
+  background-size: contain;
+  height: 24px;
+}
+
+#_p100d {
+  background: url('./images/p100d@2x.png') no-repeat center;
+  background-size: contain;
+  height: 26px;
+}
+
+.ac-on {
+  #ac {
+    background: url('./images/icon-fan-white.svg') no-repeat center;
+  }
+}
+
+#ac {
+  background: url('./images/icon-fan-gray.svg') no-repeat center;
+  width: 100%;
+  height: 45px;
+}
+
+.heat-on {
+  #heater {
+    background: url('./images/icon-wave-white.svg') no-repeat center;
+  }
+}
+
+#heater {
+  background: url('./images/icon-wave-gray.svg') no-repeat center;
+  width: 100%;
+  height: 45px;
+}
+
+.wheel {
+  background: url('./images/icon-wheel.svg') no-repeat center;
+}
+
+.twentyone { 
+  width:67px;
+  height: 67px;
+}
+
+.nineteen { 
+  width:57px;
+  height: 57px;
+  background-size: 57px;
+}
+
+.arrow-down {
+  background: url('./images/icon-chevron-down.svg') no-repeat center;
+  width: 74px;
+  height: 74px;
+  border-color: map_get($colors, 'primary');
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+@mixin rotate-wheel($speed) {
+  animation: rotate-wheel $speed linear infinite;
+}
+
+.tesla-car {
+  background: url('./images/car-base@2x.png') no-repeat center;
+  background-size: contain;
+  width: 1400px;
+  height: 388px;
+  position: relative;
+  @media (max-width: map-get($breakpoints, 'lg')) {
+    background-image: url('./images/car-base.png');
+    width: 700px;
+    height: 194px;
+  }
+  @media (max-width: map-get($breakpoints, 'sm')) {
+    scale: 0.7;
+  }
+  .wheel-left-twentyone {
+    @extend %wheel-common;
+    left: 21.7rem;
+    background-size: 133px;
+    height: 133px;
+    width: 133px;
+     @media (max-width: map-get($breakpoints, 'lg')) {
+      background-size: 70px !important;
+      height: 70px;
+      width: 70px;
+      left: 10.8rem;
+      bottom: 1.5rem !important
+    }
+  }
+
+  .wheel-right-twentyone {
+    @extend %wheel-common;
+    right: 23.2rem;
+    background-size: 133px;
+    height: 133px;
+    width: 133px;
+    @media (max-width: map-get($breakpoints, 'lg')) {
+      background-size: 70px !important;
+      height: 70px;
+      width: 70px;
+      right: 11.4rem;
+      bottom: 1.5rem !important
+    }
+  }
+
+  .wheel-left-nineteen {
+    @extend %wheel-common;
+    background-size: 123px !important;
+    left: 21.9rem;
+    height: 123px;
+    width: 123px;
+    @media (max-width: map-get($breakpoints, 'lg')) {
+      background-size: 67px !important;
+      height: 67px;
+      width: 67px;
+      left: 10.8rem;
+    }
+  }
+
+  .wheel-right-nineteen {
+    @extend %wheel-common;
+    background-size: 123px !important;
+    right: 23.7rem;
+    height: 123px;
+    width: 123px;
+    @media (max-width: map-get($breakpoints, 'lg')) {
+      background-size: 67px !important;
+      height: 67px;
+      width: 67px;
+      right: 11.6rem;
+    }
+  }
+  .slow {
+    @include rotate-wheel(5s);
+  }
+  .medium {
+    @include rotate-wheel(3s);
+  }
+  .fast {
+    @include rotate-wheel(1s);
+  }
+}
+
+%wheel-common {
+  background: url('./images/car-wheel@2x.png') no-repeat center;
+  position: absolute;
+  bottom: 3.7rem;
+  @media (max-width: map-get($breakpoints, 'lg')) {
+    bottom: 1.7rem;
+    background-image: url('./images/car-wheel.png');
+  }
+}
+
+.wheels {
+  .active {
+    border:1px solid map-get($colors, 'secondary' );
+  }
+}
