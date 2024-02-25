@@ -28,32 +28,31 @@ $sizes: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 1.875rem, 2
 }
 
 @each $breakpoint, $bp-value in $breakpoints {
+ @media (min-width: $bp-value) {
+    @each $size in $sizes {
+      $index: index($sizes, $size); // Get the index of the current size
+      // Padding
+      .#{$breakpoint}\:p-#{$index - 1} { padding: $size; }
+      .#{$breakpoint}\:px-#{$index - 1} { padding-left: $size; padding-right: $size; }
+      .#{$breakpoint}\:py-#{$index - 1} { padding-top: $size; padding-bottom: $size; }
+      .#{$breakpoint}\:pt-#{$index - 1} { padding-top: $size; }
+      .#{$breakpoint}\:pr-#{$index - 1} { padding-right: $size; }
+      .#{$breakpoint}\:pb-#{$index - 1} { padding-bottom: $size; }
+      .#{$breakpoint}\:pl-#{$index - 1} { padding-left: $size; }
 
-  @each $size in $sizes {
-    $index: index($sizes, $size); // Get the index of the current size
-
-    // Padding
-    .#{$breakpoint}\:p-#{$index - 1} { padding: $size; }
-    .#{$breakpoint}\:px-#{$index - 1} { padding-left: $size; padding-right: $size; }
-    .#{$breakpoint}\:py-#{$index - 1} { padding-top: $size; padding-bottom: $size; }
-    .#{$breakpoint}\:pt-#{$index - 1} { padding-top: $size; }
-    .#{$breakpoint}\:pr-#{$index - 1} { padding-right: $size; }
-    .#{$breakpoint}\:pb-#{$index - 1} { padding-bottom: $size; }
-    .#{$breakpoint}\:pl-#{$index - 1} { padding-left: $size; }
-
-    // Margin
-    .#{$breakpoint}\:m-#{$index - 1} { margin: $size; }
-    .#{$breakpoint}\:mx-#{$index - 1} { margin-left: $size; margin-right: $size; }
-    .#{$breakpoint}\:my-#{$index - 1} { margin-top: $size; margin-bottom: $size; }
-    .#{$breakpoint}\:mt-#{$index - 1} { margin-top: $size; }
-    .#{$breakpoint}\:mr-#{$index - 1} { margin-right: $size; }
-    .#{$breakpoint}\:mb-#{$index - 1} { margin-bottom: $size; }
-    .#{$breakpoint}\:ml-#{$index - 1} { margin-left: $size; }
-    // Margin
-    .#{$breakpoint}\:top-#{$index - 1} { top: $size; }
-    .#{$breakpoint}\:bottom-#{$index - 1} { bottom: $size; }
-    .#{$breakpoint}\:right-#{$index - 1} { right: $size; }
-    .#{$breakpoint}\:left-#{$index - 1} { left: $size; }
+      // Margin
+      .#{$breakpoint}\:m-#{$index - 1} { margin: $size; }
+      .#{$breakpoint}\:mx-#{$index - 1} { margin-left: $size; margin-right: $size; }
+      .#{$breakpoint}\:my-#{$index - 1} { margin-top: $size; margin-bottom: $size; }
+      .#{$breakpoint}\:mt-#{$index - 1} { margin-top: $size; }
+      .#{$breakpoint}\:mr-#{$index - 1} { margin-right: $size; }
+      .#{$breakpoint}\:mb-#{$index - 1} { margin-bottom: $size; }
+      .#{$breakpoint}\:ml-#{$index - 1} { margin-left: $size; }
+      // Margin
+      .#{$breakpoint}\:top-#{$index - 1} { top: $size; }
+      .#{$breakpoint}\:bottom-#{$index - 1} { bottom: $size; }
+      .#{$breakpoint}\:right-#{$index - 1} { right: $size; }
+      .#{$breakpoint}\:left-#{$index - 1} { left: $size; }
+    }
   }
-
 }

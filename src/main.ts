@@ -1,6 +1,5 @@
 import './assets/style.scss';
 import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
 import teslaLogo from './assets/images/logo.svg';
 import teslaBanner from './assets/images/hero-image@2x.png';
 import { loadAndDisplayHTML } from './core/renderer.ts';
@@ -15,7 +14,6 @@ import { fetchData } from './api/data/fetchData.ts';
 function home(): ReactiveTemplate {
   async function render() {
     await loadAndDisplayHTML('#app', homeContent, {
-      'viteLogo': viteLogo,
       'typescriptLogo': typescriptLogo,
       'teslaLogo': teslaLogo,
       'teslaBanner': teslaBanner
