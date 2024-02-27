@@ -1,4 +1,5 @@
-import State from './state';
+import State, { State_NoProxy } from './state';
+import { isIE11 } from '../utilities/ie11';
 
 type SubscriberCallback<T> = (state: T) => void;
 
@@ -7,11 +8,11 @@ type NestedObject<T> = {
 };
 
 class StateManager<T extends object> {
-    private state: State<NestedObject<T>>;
+    private state: State_NoProxy<NestedObject<T>> | State<NestedObject<T>>;
     private subscribers: SubscriberCallback<T>[];
 
     constructor(initialState: T) {
-        this.state = new State(initialState as NestedObject<T>);
+        this.state = isIE11() ? new State_NoProxy(initialState as NestedObject<T>) : new State(initialState as NestedObject<T>);
         this.subscribers = [];
     }
 

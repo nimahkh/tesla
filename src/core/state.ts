@@ -202,3 +202,77 @@ export default class State<T extends object> {
         return `${timePart}${randomPart}`;
     }
 }
+export class State_NoProxy<T extends object> {
+    public state: T;
+    private listeners: Record<string, Function[]> = {};
+    private reactiveExpressions: Record<string, { expression: string, dependencies: string[] }> = {};
+
+    constructor(initialState: T) {
+        this.state = this.deepClone(initialState);
+    }
+
+    public set(key: string, value: any) {
+        this.setValue(this.state, key.split('.'), value);
+        this.triggerListeners(key);
+    }
+
+    public reactive(key: string, expression: string) {
+        const dependencies = this.parseDependencies(expression);
+
+        this.reactiveExpressions[key] = { expression, dependencies };
+
+        this.evaluateExpression(key);
+        dependencies.forEach(dep => {
+            this.on(dep, () => this.evaluateExpression(key));
+        });
+    }
+
+    private evaluateExpression(key: string) {
+        const { expression } = this.reactiveExpressions[key];
+        const evalResult = new Function('state', `return ${expression};`)(this.state);
+        console.log(`${key}: ${evalResult}`);
+    }
+
+    private parseDependencies(expression: string): string[] {
+        const matches = expression.match(/this\.state\.(\w+)/g) || [];
+        return matches.map(match => match.replace('this.state.', ''));
+    }
+
+    public on(key: string, callback: Function) {
+        if (!this.listeners[key]) {
+            this.listeners[key] = [];
+        }
+        this.listeners[key].push(callback);
+    }
+
+    private triggerListeners(key: string) {
+        if (this.listeners[key]) {
+            this.listeners[key].forEach(callback => callback(this.getValue(this.state, key.split('.'))));
+        }
+    }
+
+    private setValue(obj: any, path: string[], value: any) {
+        const key = path.shift() as string;
+        if (path.length === 0) {
+            obj[key] = value;
+        } else {
+            if (obj[key] === undefined) {
+                obj[key] = {};
+            }
+            this.setValue(obj[key], path, value);
+        }
+    }
+
+    private getValue(obj: any, path: string[]): unknown {
+        const key = path.shift() as string;
+        if (path.length === 0) {
+            return obj[key];
+        } else {
+            return this.getValue(obj[key], path);
+        }
+    }
+
+    private deepClone(obj: any) {
+        return JSON.parse(JSON.stringify(obj));
+    }
+}

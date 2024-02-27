@@ -13,6 +13,7 @@ $sizes: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 1.875rem, 2
   .pl-#{$index - 1} { padding-left: $size; }
 
   // Margin
+  .m-auto { margin: 0 auto; }
   .m-#{$index - 1} { margin: $size; }
   .mx-#{$index - 1} { margin-left: $size; margin-right: $size; }
   .my-#{$index - 1} { margin-top: $size; margin-bottom: $size; }
@@ -41,6 +42,7 @@ $sizes: 0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 1.875rem, 2
       .#{$breakpoint}\:pl-#{$index - 1} { padding-left: $size; }
 
       // Margin
+      .#{$breakpoint}\:m-auto { margin: 0 auto; }
       .#{$breakpoint}\:m-#{$index - 1} { margin: $size; }
       .#{$breakpoint}\:mx-#{$index - 1} { margin-left: $size; margin-right: $size; }
       .#{$breakpoint}\:my-#{$index - 1} { margin-top: $size; margin-bottom: $size; }

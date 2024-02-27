@@ -10,7 +10,16 @@
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^5.3.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "rollup-plugin-polyfill-node": "^0.13.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "browserslist": [
+    "> 0.2%",
+    "ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }

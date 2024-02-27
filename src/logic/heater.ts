@@ -2,6 +2,7 @@ import { ACHeater } from '../components/ac_heater.ts';
 import { updateTemperature } from '../components/temperature.ts';
 import { fetchData } from '../api/data/fetchData.ts';
 import { handleStepperButton } from './stepper.ts';
+import { isIE11, handStepperE11 } from '../utilities/ie11.ts';
 
 function handleEnableHeater() {
     enableHeaterIfHeatOrACIsOn();
@@ -84,12 +85,19 @@ function handleACHeaterByTemperature(temperature: string) {
 
 export function handleTemperature(type: 'up' | 'down') {
     const TemperatureDOM = document.querySelector('#temperature') as HTMLInputElement;
-    if (type === 'up') {
-        TemperatureDOM?.stepUp();
-    } else {
-        TemperatureDOM?.stepDown();
+    let Temperature = '';
+
+    if (isIE11()) {
+        Temperature = handStepperE11(type, TemperatureDOM);
     }
-    const Temperature = TemperatureDOM?.value;
+    else {
+        if (type === 'up') {
+            TemperatureDOM?.stepUp();
+        } else {
+            TemperatureDOM?.stepDown();
+        }
+        Temperature = TemperatureDOM?.value;
+    }
     updateTemperature().handleUpdateTemperature(Temperature);
     handleStepperButton('temperature', { value: Temperature, min: -10, max: 40 });
     handleACHeaterByTemperature(Temperature);
