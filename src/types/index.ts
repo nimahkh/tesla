@@ -1,3 +1,3 @@
 interface ReactiveTemplate {
-    render: () => Promise<void>;
+  render: () => Promise<void>;
 }

@@ -1,7 +1,7 @@
 declare global {
-    interface Window {
-        [key: string]: (...args: any[]) => any;
-    }
+  interface Window {
+    [key: string]: (...args: any[]) => any;
+  }
 }
 
-export { }
+export {};

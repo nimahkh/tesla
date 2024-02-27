@@ -1,11 +1,11 @@
-@import './fonts.scss';
-@import './typo.scss';
-@import './utils/index.scss';
-@import './animation.scss';
-@import './input.scss';
+@import "./fonts.scss";
+@import "./typo.scss";
+@import "./utils/index.scss";
+@import "./animation.scss";
+@import "./input.scss";
 
 // Define variables for colors and fonts if you plan to reuse them
-$font-family-base: 'Montserrat', sans-serif;
+$font-family-base: "Montserrat", sans-serif;
 $color-base: rgba(0, 0, 0, 0.87);
 $background-color-base: #ffffff;
 $link-color: #646cff;
@@ -35,7 +35,9 @@ $background-color-light: #ffffff;
   }
 }
 
-.pointer { cursor: pointer; }
+.pointer {
+  cursor: pointer;
+}
 
 body {
   overflow-x: hidden;
@@ -68,7 +70,7 @@ p {
   position: relative;
   top: 65px;
   width: 100vw;
-  min-width: fit-content
+  min-width: fit-content;
 }
 .card {
   padding: 2em;
@@ -106,17 +108,17 @@ button {
  * Tesla Header
  */
 .tesla-header {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  & .logo {
     width: 100%;
-    z-index: 3;
-    & .logo {
-      width: 100%;
-      height: 65px;
-    }
+    height: 65px;
+  }
 }
 
 .tesla-banner {
@@ -125,13 +127,13 @@ button {
   width: 100%;
   .banner-image {
     width: 100%;
-    background: url('./images/hero-image@2x.png');
+    background: url("./images/hero-image@2x.png");
     background-size: cover;
     height: 800px;
-    @media (max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
       height: 500px;
     }
-    @media (max-width: map-get($breakpoints, 'sm')) {
+    @media (max-width: map-get($breakpoints, "sm")) {
       height: 300px;
     }
   }
@@ -150,33 +152,32 @@ button {
       text-decoration: none;
     }
   }
-
 }
 
 .vertical-divider {
-    margin-right: 37px;
-    width: 1px;
-    height: 110px;
-    background: rgba(0, 0, 0, 0.3);
+  margin-right: 37px;
+  width: 1px;
+  height: 110px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .speed-heater-wrapper {
-   height: 123px;
-   text-align: center;
+  height: 123px;
+  text-align: center;
 }
 
 .speed-heater {
   width: 103px;
   height: 103px;
   border-color: #e3e8f0;
-  padding:10px;
+  padding: 10px;
   border-width: 1px;
   border-style: solid;
   background: #f0f2f7;
   border-radius: 50%;
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     margin-top: -7% !important;
-    margin-left: -7% !important; 
+    margin-left: -7% !important;
   }
 }
 
@@ -188,15 +189,15 @@ button {
   cursor: pointer;
 }
 .ac-on {
-  background-color: map-get($colors, 'secondary');
-  #ac-on{
-    color: #fff
+  background-color: map-get($colors, "secondary");
+  #ac-on {
+    color: #fff;
   }
 }
 .heat-on {
-  background-color: map-get($colors, 'red');
-  #heat-on{
-    color: #fff
+  background-color: map-get($colors, "red");
+  #heat-on {
+    color: #fff;
   }
 }
 
@@ -207,61 +208,61 @@ button {
 }
 
 #_100d {
-  background: url('./images/100d@2x.png') no-repeat center;
+  background: url("./images/100d@2x.png") no-repeat center;
   background-size: contain;
   height: 24px;
 }
 
 #_p100d {
-  background: url('./images/p100d@2x.png') no-repeat center;
+  background: url("./images/p100d@2x.png") no-repeat center;
   background-size: contain;
   height: 26px;
 }
 
 .ac-on {
   #ac {
-    background: url('./images/icon-fan-white.svg') no-repeat center;
+    background: url("./images/icon-fan-white.svg") no-repeat center;
   }
 }
 
 #ac {
-  background: url('./images/icon-fan-gray.svg') no-repeat center;
+  background: url("./images/icon-fan-gray.svg") no-repeat center;
   width: 100%;
   height: 45px;
 }
 
 .heat-on {
   #heater {
-    background: url('./images/icon-wave-white.svg') no-repeat center;
+    background: url("./images/icon-wave-white.svg") no-repeat center;
   }
 }
 
 #heater {
-  background: url('./images/icon-wave-gray.svg') no-repeat center;
+  background: url("./images/icon-wave-gray.svg") no-repeat center;
   width: 100%;
   height: 45px;
 }
 
 .wheel {
-  background: url('./images/icon-wheel.svg') no-repeat center;
+  background: url("./images/icon-wheel.svg") no-repeat center;
 }
 
-.twentyone { 
-  width:67px;
+.twentyone {
+  width: 67px;
   height: 67px;
 }
 
-.nineteen { 
-  width:57px;
+.nineteen {
+  width: 57px;
   height: 57px;
   background-size: 57px;
 }
 
 .arrow-down {
-  background: url('./images/icon-chevron-down.svg') no-repeat center;
+  background: url("./images/icon-chevron-down.svg") no-repeat center;
   width: 74px;
   height: 74px;
-  border-color: map_get($colors, 'primary');
+  border-color: map_get($colors, "primary");
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
@@ -272,17 +273,17 @@ button {
 }
 
 .tesla-car {
-  background: url('./images/car-base@2x.png') no-repeat center;
+  background: url("./images/car-base@2x.png") no-repeat center;
   background-size: contain;
   width: 1400px;
   height: 388px;
   position: relative;
-  @media (max-width: map-get($breakpoints, 'lg')) {
-    background-image: url('./images/car-base.png');
+  @media (max-width: map-get($breakpoints, "lg")) {
+    background-image: url("./images/car-base.png");
     width: 700px;
     height: 194px;
   }
-  @media (max-width: map-get($breakpoints, 'sm')) {
+  @media (max-width: map-get($breakpoints, "sm")) {
     scale: 0.7;
   }
   .wheel-left-twentyone {
@@ -291,12 +292,12 @@ button {
     background-size: 133px;
     height: 133px;
     width: 133px;
-     @media (max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
       background-size: 70px !important;
       height: 70px;
       width: 70px;
       left: 10.8rem;
-      bottom: 1.5rem !important
+      bottom: 1.5rem !important;
     }
   }
 
@@ -306,12 +307,12 @@ button {
     background-size: 133px;
     height: 133px;
     width: 133px;
-    @media (max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
       background-size: 70px !important;
       height: 70px;
       width: 70px;
       right: 11.4rem;
-      bottom: 1.5rem !important
+      bottom: 1.5rem !important;
     }
   }
 
@@ -321,7 +322,7 @@ button {
     left: 21.9rem;
     height: 123px;
     width: 123px;
-    @media (max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
       background-size: 67px !important;
       height: 67px;
       width: 67px;
@@ -335,7 +336,7 @@ button {
     right: 23.7rem;
     height: 123px;
     width: 123px;
-    @media (max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
       background-size: 67px !important;
       height: 67px;
       width: 67px;
@@ -354,17 +355,17 @@ button {
 }
 
 %wheel-common {
-  background: url('./images/car-wheel@2x.png') no-repeat center;
+  background: url("./images/car-wheel@2x.png") no-repeat center;
   position: absolute;
   bottom: 3.7rem;
-  @media (max-width: map-get($breakpoints, 'lg')) {
+  @media (max-width: map-get($breakpoints, "lg")) {
     bottom: 1.7rem;
-    background-image: url('./images/car-wheel.png');
+    background-image: url("./images/car-wheel.png");
   }
 }
 
 .wheels {
   .active {
-    border:1px solid map-get($colors, 'secondary' );
+    border: 1px solid map-get($colors, "secondary");
   }
 }

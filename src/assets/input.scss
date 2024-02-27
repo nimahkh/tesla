@@ -16,7 +16,7 @@
 }
 
 .indicator {
-    font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .input-container {
@@ -32,7 +32,8 @@
   margin-right: 0.5rem;
 }
 
-.input-addon, .input-addon-button {
+.input-addon,
+.input-addon-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,71 +52,72 @@
 }
 
 .range-container {
-    background-color: transparent;
-    border: none;
-    width: 12rem;
-    height: 45px;
-    border-color: #b9bed1;
-    border-width: 1px;
-    border-style: solid;
-    color: #333;
-    background: #f0f2f7;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    .divider {
-        margin: 5px 0px;
-        width: 50px;
-        height: 1px;
-        background: rgba(0,0,0,0.3);
-    }
-    @media (max-width: map-get($breakpoints, 'sm')) {
-      width: auto;
-    }  
+  background-color: transparent;
+  border: none;
+  width: 12rem;
+  height: 45px;
+  border-color: #b9bed1;
+  border-width: 1px;
+  border-style: solid;
+  color: #333;
+  background: #f0f2f7;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  .divider {
+    margin: 5px 0px;
+    width: 50px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  @media (max-width: map-get($breakpoints, "sm")) {
+    width: auto;
+  }
 }
 
 .stepper {
-    background-color: transparent;
-    border: none;
-    &:active, &:focus {
-        outline: none;
-    }
+  background-color: transparent;
+  border: none;
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
 .chevron-up {
-    background: url('./images/icon-thin-chevron-up.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    &[disabled] {
-      opacity: 0.5;
-      filter: saturate(0);
-    }
+  background: url("./images/icon-thin-chevron-up.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  &[disabled] {
+    opacity: 0.5;
+    filter: saturate(0);
+  }
 }
 
 .chevron-down {
-    background: url('./images/icon-thin-chevron-down.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    &[disabled] {
-      opacity: 0.5;
-      filter: saturate(0);
-    }
+  background: url("./images/icon-thin-chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  &[disabled] {
+    opacity: 0.5;
+    filter: saturate(0);
+  }
 }
 
 .range {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 34px;
-    width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 34px;
+  width: 100%;
 }
 
 input[type="number"] {
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }

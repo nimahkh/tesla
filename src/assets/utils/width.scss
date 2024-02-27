@@ -18,13 +18,15 @@
   width: 100vw;
 }
 
-@for $i from 1 through 48 { // Tailwind goes up to 12rem by default (48 * 0.25rem)
+@for $i from 1 through 48 {
+  // Tailwind goes up to 12rem by default (48 * 0.25rem)
   .w-#{$i} {
     width: $i * $size-base;
   }
 }
 
-@for $i from 1 through 10 { // Tailwind goes up to 12rem by default (48 * 0.25rem)
+@for $i from 1 through 10 {
+  // Tailwind goes up to 12rem by default (48 * 0.25rem)
   .w-#{$i}0p {
     width: $i * 10%;
   }
@@ -41,7 +43,8 @@
         width: $i * $size-base;
       }
     }
-    @for $i from 1 through 10 { // Tailwind goes up to 12rem by default (48 * 0.25rem)
+    @for $i from 1 through 10 {
+      // Tailwind goes up to 12rem by default (48 * 0.25rem)
       .#{$breakpoint}\:w-#{$i}0p {
         width: $i * 10%;
       }
