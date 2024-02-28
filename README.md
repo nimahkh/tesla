@@ -3,9 +3,9 @@
 This project is a sophisticated web application built with pure Modern JavaScript, incorporating polyfills for IE11 compatibility. It mimics the reactivity in frameworks like Vue using vite and utility-first CSS frameworks like Tailwind, though it relies on vanilla JavaScript and custom methodologies to achieve these effects.
 Technical skills:
 
-```
-Vite, Typescript, SASS, Reactivity system, IE11 Compatibility, No-Javascript compatibility, Jest (Unit & INtegration tests), Docker, Vercel, Vite, HTML Renderer
-```
+`
+Vite, Typescript, SASS, Reactivity system, IE11 Compatibility, No-Javascript compatibility, Vitest (Unit & INtegration tests), Docker, Vercel, Vite, HTML Renderer
+`
 
 ## Project Structure
 
@@ -58,6 +58,7 @@ https://tesla-c8a4.vercel.app/
 
 ### Tests
 
+#### Tests are written with Vitest
 The project includes one integration test and several unit tests, to run them accordingly, run
 `npm run test`
 
