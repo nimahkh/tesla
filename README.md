@@ -28,6 +28,16 @@ The project is organized as follows:
 
 # Install the project
 
+- **[With Docker](#serve-it-on-docker)** 
+- **[Without Docker](#run-on-local)** 
+
+## Serve it on Docker
+
+- Ensure that your docker engine is run 
+- Run `npm run serve` to build and serve the project on `localhost:5006` using Docker 
+
+
+## Run on local
 - Clone the repository 
 - Chage your direction to the project directory 
 - Run `npm ci` to install the dependencies
@@ -37,11 +47,6 @@ The project is organized as follows:
 
 To build the project on your local machine, run 
 `npm run build`, it will create a `dist` folder which inlcudes all the assets. 
-
-## Serve it on Docker
-
-- Ensure that your docker engine is run 
-- Run `npm run serve` to build and serve the project on `localhost:5000` using Docker 
 
 ## Preview on Vercel 
 

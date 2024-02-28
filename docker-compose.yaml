@@ -3,5 +3,5 @@ services:
   app:
     build: .
     ports:
-      - "5000:5000"
-    command: ["serve", "-l", "5000", "dist"]
+      - "5006:5006"
+    command: ["serve", "-l", "5006", "dist"]

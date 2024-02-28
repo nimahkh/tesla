@@ -16,11 +16,11 @@ COPY . .
 # Build the project
 RUN npm run build
 
-# Install `serve` to serve the app on port 5000
+# Install `serve` to serve the app on port 5006
 RUN npm install -g serve
 
-# Open port 5000 to the outside world
-EXPOSE 5000
+# Open port 5006 to the outside world
+EXPOSE 5006
 
 # Serve the app
-CMD ["serve", "dist", "-l", "5000"]
+CMD ["serve", "dist", "-l", "5006"]
