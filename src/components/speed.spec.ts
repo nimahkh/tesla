@@ -2,22 +2,22 @@ import { updateSpeed } from "./speed";
 import { store } from "../store";
 
 jest.mock("../store", () => ({
-    store: {
-        setState: jest.fn(),
-    },
+  store: {
+    setState: jest.fn(),
+  },
 }));
 
 describe("updateSpeed", () => {
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-    test("handleUpdateSpeed updates the speed in the store", () => {
-        const { handleUpdateSpeed } = updateSpeed();
-        const newSpeed = "100";
+  test("handleUpdateSpeed updates the speed in the store", () => {
+    const { handleUpdateSpeed } = updateSpeed();
+    const newSpeed = "100";
 
-        handleUpdateSpeed(newSpeed);
+    handleUpdateSpeed(newSpeed);
 
-        expect(store.setState).toHaveBeenCalledWith({ speed: newSpeed });
-    });
+    expect(store.setState).toHaveBeenCalledWith({ speed: newSpeed });
+  });
 });

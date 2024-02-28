@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "serve": "docker-compose up --build",
     "preview": "vite preview",
+    "prettier": "npx prettier --write .",
     "test": "jest"
   },
   "devDependencies": {
