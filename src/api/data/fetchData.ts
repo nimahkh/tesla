@@ -29,7 +29,7 @@ function lookupCarData(
     (data) =>
       data.temp === parseInt(state.temprature) &&
       data.wheelsize === state.wheel_size &&
-      (state.acIsOn ? data.ac === "on" : data.ac === "off"),
+      (state.acIsOn || state.heatIsOn ? data.ac === "on" : data.ac === "off"),
   );
 
   if (dataset) {
