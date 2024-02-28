@@ -1,17 +1,17 @@
 import { loadAndDisplayHTML } from "./renderer";
+import { describe, beforeEach, afterEach, expect, test, vi } from 'vitest'
 
 describe("loadAndDisplayHTML", () => {
-  // Mock container
   const mockContainer = document.createElement("div");
 
   beforeEach(() => {
     mockContainer.innerHTML = "";
-    jest.spyOn(document, "querySelector").mockReturnValue(mockContainer);
-    jest.spyOn(console, "error").mockImplementation();
+    vi.spyOn(document, "querySelector").mockReturnValue(mockContainer);
+    vi.spyOn(console, "error").mockImplementation(() => { });
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   test("injects HTML content into the container with replaced props", async () => {
@@ -27,7 +27,7 @@ describe("loadAndDisplayHTML", () => {
   });
 
   test("logs an error when container is not found", async () => {
-    jest.spyOn(document, "querySelector").mockReturnValueOnce(null);
+    vi.spyOn(document, "querySelector").mockReturnValueOnce(null);
     const containerSelector = "#missing-container";
     const htmlContent = "<div>Content</div>";
     const props = {};

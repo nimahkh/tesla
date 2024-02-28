@@ -1,4 +1,5 @@
 import StateManager from "./state_manager";
+import { describe, expect, beforeEach, test, vi } from 'vitest'
 
 describe("StateManager without IE11 considerations", () => {
   let stateManager: StateManager<{ count: number; nested: { value: boolean } }>;
@@ -31,7 +32,7 @@ describe("StateManager without IE11 considerations", () => {
   });
 
   test("subscribers are notified on state change", () => {
-    const subscriberMock = jest.fn();
+    const subscriberMock = vi.fn();
     stateManager.subscribe(subscriberMock);
 
     stateManager.setState({ count: 5 });

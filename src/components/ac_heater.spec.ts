@@ -1,7 +1,8 @@
 import { ACHeater } from "./ac_heater";
 import { store } from "../store";
+import { describe, expect, test, vi } from 'vitest'
 
-jest.mock("../store", () => ({
+vi.mock("../store", () => ({
   store: {
     state: {
       isAc: false,

@@ -1,15 +1,16 @@
 import { updateSpeed } from "./speed";
 import { store } from "../store";
+import { describe, beforeEach, expect, test, vi } from 'vitest'
 
-jest.mock("../store", () => ({
+vi.mock("../store", () => ({
   store: {
-    setState: jest.fn(),
+    setState: vi.fn(),
   },
 }));
 
 describe("updateSpeed", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test("handleUpdateSpeed updates the speed in the store", () => {

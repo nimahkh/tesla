@@ -1,7 +1,8 @@
 import { updateTemperature } from "./temperature";
 import { store } from "../store";
+import { describe, expect, test, vi } from 'vitest'
 
-jest.mock("../store", () => ({
+vi.mock("../store", () => ({
   store: {
     state: {},
     setState(newState: any) {
