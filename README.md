@@ -44,6 +44,8 @@ The project is organized as follows:
 - Clone the repository
 - Chage your direction to the project directory
 - Run `npm ci` to install the dependencies
+    - if you are not using Mac book, run `npm ci --no-optional`
+    - If you are using `linux` i'll recommend to use the [**Docker** verion](#serve-it-on-docker) instead to run the project 
 - Run `npm run dev` to run the project on your local
 
 ## Build the project
@@ -61,6 +63,15 @@ https://tesla-c8a4.vercel.app/
 #### Tests are written with Vitest
 The project includes one integration test and several unit tests, to run them accordingly, run
 `npm run test`
+
+
+## Technologies
+
+**SASS** for Styling: Utilizes SASS for CSS, with utility classes and mixins in assets/utils similar to Tailwind's approach. breakpoints.scss enables dynamic implementation of media queries.
+
+**Vite**: as module bundler.
+
+**Assets optimizer**: Using vite to optimize the images and assets during build at least 66%. 
 
 ## Key Directories and Files
 
@@ -102,8 +113,11 @@ The project includes one integration test and several unit tests, to run them ac
 
 - **renderer** dynamically renders HTML templates based on state changes.
 
-## Technologies
 
-**SASS** for Styling: Utilizes SASS for CSS, with utility classes and mixins in assets/utils similar to Tailwind's approach. breakpoints.scss enables dynamic implementation of media queries.
+#### Bonus points
 
-**Vite**: as module bundler.
+- [ x ] 🤩 Use animations to make the interactions with the UI more fluid.
+- [ x ]♿️ Make your project fully responsive without sacrificing either usability _or_ accessibility
+- [ x ]🐢 Keep an eye on performance and apply optimizations as much as you can.
+- [ x ]🚀 Deploy it as a static website on [Netlify](https://netlify.com) or [Vercel](https://vercel.com)
+- [ x ]💯 Make sure your project is [well-tested](https://martinfowler.com/articles/practical-test-pyramid.html)

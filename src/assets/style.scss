@@ -17,6 +17,10 @@ $button-hover-border-color: #646cff;
 $text-color-light: #213547;
 $background-color-light: #ffffff;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: $font-family-base;
   line-height: 1.5;

@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image
-FROM node:18
+FROM node:20.3.0
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -8,7 +8,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm ci
+RUN npm ci --no-optional
+RUN npm i @rollup/rollup-linux-arm64-gnu -D
 
 # Copy the rest of the application code
 COPY . .
